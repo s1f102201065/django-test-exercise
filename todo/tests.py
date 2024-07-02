@@ -63,7 +63,7 @@ class TodoViewTestCase(TestCase):
         response=client.get('/?order=post')
 
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(response.templats[0].name, 'todo/index.html')
+        self.assertEqual(response.templates[0].name, 'todo/index.html')
         self.assertEqual(response.context['tasks'][0], task2)
         self.assertEqual(response.context['tasks'][1], task1)
     
@@ -76,6 +76,6 @@ class TodoViewTestCase(TestCase):
         response=client.get('/?order=due')
 
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(response.templats[0].name, 'todo/index.html')
+        self.assertEqual(response.templates[0].name, 'todo/index.html')
         self.assertEqual(response.context['tasks'][0], task1)
         self.assertEqual(response.context['tasks'][1], task2)
