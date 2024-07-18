@@ -28,8 +28,13 @@
     <br>
 
     <div>
-      <a href="{% url 'index' %}?order=due">Sort by Due Date</a> |
-      <a href="{% url 'index' %}?order=post">Sort by Posted Date</a>
+      <a href="{% url 'index' %}?order=due{% if request.GET.hide_completed %}&hide_completed=True{% endif %}">期限順</a> |
+      <a href="{% url 'index' %}?order=post{% if request.GET.hide_completed %}&hide_completed=True{% endif %}">投稿日時順</a> |
+      {% if request.GET.hide_completed %}
+      <a href="{% url 'index' %}?{% if request.GET.order %}order={{ request.GET.order }}{% endif %}">完了済みを表示</a>
+      {% else %}
+      <a href="{% url 'index' %}?hide_completed=True{% if request.GET.order %}&order={{ request.GET.order }}{% endif %}">完了済みを非表示</a>
+      {% endif %}
     </div>
 
     {% for task in tasks %}

@@ -16,6 +16,9 @@ def index(request):
     else:
         tasks = Task.objects.order_by('-posted_at')
 
+    if request.GET.get('hide_completed'):
+        tasks = tasks.filter(completed=False)
+
     context = {
         'tasks': tasks
     }
