@@ -1,3 +1,53 @@
 h1 {
     color: brown;
 }
+
+
+#calendar {
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+#calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#calendar-header button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+#calendar-header button:hover {
+    background-color: #0056b3;
+}
+
+#month-year {
+    font-size: 1.2em;
+}
+
+#calendar-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#calendar-table th, #calendar-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    width: 14.28%;
+}
+
+#calendar-table th {
+    background-color: #f0f0f0;
+}
+
+.special-date {
+    background-color: yellow; /* 特定の日付をマークするための背景色 */
+}

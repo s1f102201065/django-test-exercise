@@ -28,6 +28,31 @@
     </form>
     <br>
 
+    <div id="calendar">
+      <div id="calendar-header">
+          <button id="prev"><<</button>
+          <span id="month-year"></span>
+          <button id="next">>></button>
+      </div>
+      <table id="calendar-table">
+          <thead>
+              <tr>
+                  <th>日</th>
+                  <th>月</th>
+                  <th>火</th>
+                  <th>水</th>
+                  <th>木</th>
+                  <th>金</th>
+                  <th>土</th>
+              </tr>
+          </thead>
+          <tbody>
+              <!-- カレンダーの日付がここに表示されます -->
+          </tbody>
+      </table>
+  </div>
+  <script src="../../static/js/scripts.js"></script>
+
     <div>
       <a href="{% url 'index' %}?order=due{% if request.GET.hide_completed %}&hide_completed=True{% endif %}">期限順</a> |
       <a href="{% url 'index' %}?order=post{% if request.GET.hide_completed %}&hide_completed=True{% endif %}">投稿日時順</a> |
